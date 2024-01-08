@@ -38,7 +38,7 @@ const winword = [
 ]
 
 // set speed วินาที
-let speed = 7.5;
+let speed = 6.5;
 
 let alldigit = 0;
 let arrrandom_num = [];
