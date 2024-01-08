@@ -37,15 +37,21 @@
             <button class="okbtn mt-4 bg-slate-800 px-8 py-2 text-white hover:bg-slate-700">OK</button>
         </div>
 
-
+        <h1 class="text-center text-white mb-2">True or False ?</h1>
         <div id="content" class="flex flex-col w-auto">
             <div id="top" class="flex justify-between bg-slate-900 p-2 mb-2">
                 <div class="flex">
                     <h1 class="text-white mr-2">Number: </h1>
                     <h1 class="maindigit text-white bg-slate-800 px-2">????</h1>
                 </div>
-                <div>
-                    <p class="text-white">True or False ?</p>
+                <div class="sl flex gap-2">
+                    <label for="difficulty" class="text-white">Mode:</label>
+                    <select id="difficulty" class="bg-slate-700 text-white">
+                        <option value="easy" class="rounded-s-none">Easy</option>
+                        <option value="normal" class="rounded-s-none" selected>Normal</option>
+                        <option value="hard" class="rounded-s-none">Hard</option>
+                        <option value="what" class="rounded-s-none">????</option>
+                    </select>
                 </div>
             </div>
             <div id="middle" class="grid grid-cols-4 lg:grid-cols-8 gap-2 bg-slate-900 p-4">

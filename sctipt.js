@@ -8,6 +8,8 @@ const time_progress = document.getElementById("time-progress");
 const modal = document.querySelector(".modal");
 const okbtn = document.querySelector(".okbtn");
 const content_text = document.querySelector(".content-text");
+const select = document.querySelector("select");
+const sl = document.querySelector(".sl");
 
 digitdisplay.style.letterSpacing = "0.5rem";
 
@@ -39,6 +41,21 @@ const winword = [
 
 // set speed วินาที
 let speed = 6.5;
+
+select.addEventListener("change",() => {
+    if (select.value == "easy") {
+        speed = 10;
+    }
+    else if (select.value == "normal") {
+        speed = 6.5;
+    }
+    else if (select.value == "hard") {
+        speed = 4;
+    }
+    else if (select.value == "what") {
+        speed = 1;
+    }
+});
 
 let alldigit = 0;
 let arrrandom_num = [];
