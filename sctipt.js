@@ -60,10 +60,12 @@ select.addEventListener("change",() => {
 let alldigit = 0;
 let arrrandom_num = [];
 let coutarr = 0;
+let here = 0;
 const adio1 = new Audio('click.wav');
 const adio2 = new Audio('stop.mp3');
 
 startbtn.addEventListener("click",() => {
+    random_num[here].classList.add("border-white");
     adio1.play();
     startbtn.style.visibility = "hidden";
     bottom.classList.remove("invisible");
@@ -94,10 +96,14 @@ startbtn.addEventListener("click",() => {
 });
 
 btntrue.addEventListener("click",() => {
+    here++;
     adio1.play();
     if (alldigit.toString().includes(arrrandom_num[coutarr])) {
         random_num[coutarr].classList.add("border-blue-400");
         coutarr++;
+        if (here < random_num.length) {
+            random_num[here].classList.add("border-white");
+        }
         if (coutarr < random_num.length) {
             random_num[coutarr].innerHTML = arrrandom_num[coutarr];
         }
@@ -129,10 +135,14 @@ btntrue.addEventListener("click",() => {
 });
 
 btnfalse.addEventListener("click",() => {
+    here++;
     adio1.play();
     if (!alldigit.toString().includes(arrrandom_num[coutarr])) {
         random_num[coutarr].classList.add("border-blue-400");
         coutarr++;
+        if (here < random_num.length) {
+            random_num[here].classList.add("border-white");
+        }
         if (coutarr < random_num.length) {
             random_num[coutarr].innerHTML = arrrandom_num[coutarr];
         }
@@ -163,11 +173,11 @@ btnfalse.addEventListener("click",() => {
     }
 });
 
-//ok new game
 okbtn.addEventListener("click",() => {
     alldigit = 0;
     arrrandom_num = [];
     coutarr = 0;
+    here = 0;
 
     adio1.play();
     time_progress.style.animation = "unset";
@@ -181,10 +191,9 @@ okbtn.addEventListener("click",() => {
         e.innerHTML = "?";
         e.classList.remove("border-blue-400");
         e.classList.remove("border-red-500");
+        e.classList.remove("border-white");
     });
 });
-
-// หลังจากกด start แล้ว สามารถกดปุ่ม < แทน true และ > แทน false ได้ 
 
 document.addEventListener("keydown",e => {
     if(time_progress.style.animation != "none" && modal.classList.contains("hidden") && startbtn.style.visibility == "hidden") {
@@ -195,7 +204,7 @@ document.addEventListener("keydown",e => {
             btnfalse.click();
         }
     }
-    // กด enter เพื่อเริ่มเกมใหม่
+
     else if (modal.classList.contains("flex") && e.key == "Enter") {
         okbtn.click();
     }
