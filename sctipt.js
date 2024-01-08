@@ -62,6 +62,7 @@ startbtn.addEventListener("click",() => {
     random_num[0].innerHTML = arrrandom_num[0];
 
     time_progress.addEventListener("animationend",() => {
+        adio2.play();
         alldigit = 0;
         arrrandom_num = [];
         coutarr = 0;
