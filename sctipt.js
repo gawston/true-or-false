@@ -73,6 +73,7 @@ startbtn.addEventListener("click",() => {
         modal.classList.add("flex");
         content_text.innerHTML = lostword[Math.floor(Math.random() * lostword.length)];
     });
+
 });
 
 btntrue.addEventListener("click",() => {
@@ -164,4 +165,24 @@ okbtn.addEventListener("click",() => {
         e.classList.remove("border-blue-400");
         e.classList.remove("border-red-500");
     });
+});
+
+// หลังจากกด start แล้ว สามารถกดปุ่ม < แทน true และ > แทน false ได้ 
+
+document.addEventListener("keydown",e => {
+    if(time_progress.style.animation != "none" && modal.classList.contains("hidden") && startbtn.style.visibility == "hidden") {
+        if (e.key == "ArrowLeft") {
+            btntrue.click();
+        }
+        else if (e.key == "ArrowRight") {
+            btnfalse.click();
+        }
+    }
+    // กด enter เพื่อเริ่มเกมใหม่
+    else if (modal.classList.contains("flex") && e.key == "Enter") {
+        okbtn.click();
+    }
+    else if (modal.classList.contains("hidden") && e.key == "Enter") {
+        startbtn.click();
+    }
 });
