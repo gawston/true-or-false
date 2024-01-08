@@ -37,7 +37,8 @@ const winword = [
     'ปล่อยให้ชนะเฉยๆหรอก 555'
 ]
 
-let speed = 10;
+// set speed วินาที
+let speed = 7.5;
 
 let alldigit = 0;
 let arrrandom_num = [];
